@@ -91,7 +91,7 @@ https://instagram-engineering.com/static-analysis-at-scale-an-instagram-story-8f
 [IBM](https://www.ibm.com/think/topics/monolithic-architecture)
 [vFunction](https://vfunction.com/blog/what-is-monolithic-application)
 
-## Micro-serives
+## Micro-services
 
 ### Caractéristiques
 - Composants logiciels indépendants dotés de fonctionnalités autonomes qui communiquent entre eux à l'aide d'API.
@@ -104,7 +104,8 @@ https://instagram-engineering.com/static-analysis-at-scale-an-instagram-story-8f
 - Architecture de plus en plus populaire
 
 ### Définition
-- Une architecture micro-service représente des systèmes plus complexes où chaque fonctionnalités sont indépendantes.
+Une architecture micro-service représente des systèmes plus complexes où chaque fonctionnalité est indépendante.
+Ils offrent une meilleure tolérance aux problèmes techniques et une plus grande flexibilité par rapport aux architectures monolithiques.
 
 ### Exemples d'implémentations
 ![alt text](image-1.png)
@@ -112,10 +113,16 @@ https://instagram-engineering.com/static-analysis-at-scale-an-instagram-story-8f
 ### Cas d'utilisations
 - Netflix (une des premières grosses entreprises a être passée de monolithique à micro-services, elle à même remporté le 2015 JAX Special Jury Award)
 - Microsoft Office
+- Amazon
+- Soundcloud
 
 ### Sources
 - AWS
 - talend
+
+https://www.allthingsdistributed.com/2019/08/modern-applications-at-aws.html
+
+https://developers.soundcloud.com/blog/microservices-and-the-monolith
 
 ## Event-driven
 
