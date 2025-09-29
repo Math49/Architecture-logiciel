@@ -100,6 +100,11 @@ https://instagram-engineering.com/static-analysis-at-scale-an-instagram-story-8f
 - Nécessite des outils de débogage avancés pour suivre l'échange de données entre plusieurs microservices.
 - Modifications des microservices individuels sans affecter l'ensemble de l'application.
 - Allocations des ressources individuellement, en fonction des besoins => Economie des coûts
+- Promeut l'expertise par équipe
+- Possibilité de changer de technologies selon les services
+- Plus facile de mettre en place un CI/CD
+- La communication par API peut exposer à des faiblesses de sécurité
+- Peu être moins performante
 
 - Architecture de plus en plus populaire
 
@@ -116,9 +121,12 @@ Ils offrent une meilleure tolérance aux problèmes techniques et une plus grand
 - Amazon
 - Soundcloud
 
+
 ### Sources
 - AWS
 - talend
+- [IBM](https://www.ibm.com/think/topics/monolithic-architecture)
+- [vFunction](https://vfunction.com/blog/what-is-monolithic-application)
 
 https://www.allthingsdistributed.com/2019/08/modern-applications-at-aws.html
 
