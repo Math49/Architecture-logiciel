@@ -128,13 +128,43 @@ https://developers.soundcloud.com/blog/microservices-and-the-monolith
 
 ### Caractéristiques
 
+- Couplage moins étroit (le producteur et le consommateur ne se connaissent pas)
+- Grande flexibilité
+- En cas de panne, les messages s'empilent dans une file d'attente et ne sont pas perdus
+- Peut être implémenté dans des microservices, mais il est moins recommandé dans une solution monolithe
+- Offre un traitement en temps réel, ou à faible latence
+- Les événéments sont persistants, ils sont conservés pendant un certain temps pour qu'ils puissent être consommés à n'importe quel moment
+
 ### Définition
+
+Un événement correspond à un changement d'état, une mise à jour ou tout autre point d'intérêt dans le système. L'EDA (Event-Driven Architecture) capture, traite et publie tous ces événements de façon asynchrone.
+
+Un événement arrive, le producteur l'annonce. Un bus va diffuser l'annonce du producteur, le consommateur va écouter et réagir à l'événement.
 
 ### Exemples d'implémentations
 
+![alt text](EDA.webp)
+
 ### Cas d'utilisations
 
+- Twitter
+- UberEats (notamment pour le système de publicités)
+
 ### Sources
+
+https://www.ibm.com/fr-fr/topics/event-driven-architecture
+
+https://www.confluent.io/learn/event-driven-architecture/
+
+https://aws.amazon.com/fr/event-driven-architecture/
+
+https://fr.wikipedia.org/wiki/Architecture_orient%C3%A9e_%C3%A9v%C3%A9nements
+
+https://medium.com/@seetharamugn/the-complete-guide-to-event-driven-architecture-b25226594227
+
+https://dev.to/yokwejuste/understanding-event-driven-architecture-110o
+
+https://www.uber.com/en-FR/blog/real-time-exactly-once-ad-event-processing/
 
 ## Hexa
 
