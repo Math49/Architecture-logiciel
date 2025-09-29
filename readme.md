@@ -29,7 +29,7 @@ Faire des recherches sur chacun des 4 types d'architecture cités plus haut. Pou
 - Si plus de ressources doivent être allouées, c'est tout le système qui prend les ressources => On passe très vite dans du gaspillage de ressources
 - Limite l'introduction de nouvelles fonnctionnalités
 
-|                    Avanatages                    |                   Incovénients                   |
+|                    Avantages                    |                   Inconvénients                   |
 |--------------------------------------------------|--------------------------------------------------|
 |Pas besoin de traduire le code entre les services |Assez rigide : Difficile d'intégrer des nouvelles | 
 |                                                  |technologies                                      |
@@ -41,18 +41,15 @@ Faire des recherches sur chacun des 4 types d'architecture cités plus haut. Pou
 |                                                  |localisée                                         |
 |Performante                                       |Nécessite une équipe bien organiqée               |
 
-- De plus en plus d'applications passent d'une architecture Monolithique à une architecture Micro-serivice
+De plus en plus d'applications passent d'une architecture Monolithique à une architecture Micro-serivice
 
 ### Définition
 
 L'architecture monolithique utilise une base de code unique pour plusieurs fonctions métiers,
-chaque service sont interdépendants, ce qui implique que la moindre modification peut avoir des répercussions
-sur le reste de l'application.
-
+chaque service sont interdépendants, ce qui implique que la moindre modification peut avoir des répercussions sur le reste de l'application.
 Modèle de développement logiciel utilisant une base de code unique qui centralise des composants interdépendants afin d'exécuter différentes fonctions métier.
 
-Une architecture monolithique peut être envisageable voire nécessaire dans des petits projets. Mais dès que le projet se complexifie, il peut être compliqué de maintenir.
-
+Une architecture monolithique peut être envisageable voire nécessaire dans des petits projets. Mais dès que le projet se complexifie, il peut être compliqué de le maintenir.
 Une architecture monolithique représente un système simple, développé sur une même base de code. Généralement constitué d'un front, d'un back et d'une BDD.
 
 ### Exemples d'implémentations (schémas)
@@ -87,6 +84,7 @@ https://about.gitlab.com/blog/why-were-sticking-with-ruby-on-rails/
 https://handbook.gitlab.com/handbook/engineering/architecture/design-documents/modular_monolith/
 
 https://instagram-engineering.com/static-analysis-at-scale-an-instagram-story-8f498ab71a0c
+
 [Atlassian](https://www.atlassian.com/fr/microservices/microservices-architecture/microservices-vs-monolith)
 [Amazon](https://aws.amazon.com/fr/compare/the-difference-between-monolithic-and-microservices-architecture/)
 [F5](https://www.f5.com/fr_fr/glossary/monolithic-application#:~:text=Syst%C3%A8mes%20bancaires%20%E2%80%93%20De%20nombreux%20syst%C3%A8mes,qui%20les%20rend%20plus%20s%C3%BBrs.)
