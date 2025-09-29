@@ -12,3 +12,14 @@ Faire des recherches sur chacun des 4 types d'architecture cités plus haut. Pou
 - Des exemples d'implémentation (schémas ?)
 - Des exemples d'utilisation dans des projets connus
 - La liste des sources (liens web) où vous avez trouvé les informations
+
+
+## Monolithique
+
+
+## Micro-serives
+
+
+## Event-driven
+
+## Hexa
