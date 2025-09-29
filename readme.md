@@ -91,7 +91,7 @@ https://instagram-engineering.com/static-analysis-at-scale-an-instagram-story-8f
 [IBM](https://www.ibm.com/think/topics/monolithic-architecture)
 [vFunction](https://vfunction.com/blog/what-is-monolithic-application)
 
-## Micro-serives
+## Micro-services
 
 ### Caractéristiques
 - Composants logiciels indépendants dotés de fonctionnalités autonomes qui communiquent entre eux à l'aide d'API.
@@ -100,7 +100,7 @@ https://instagram-engineering.com/static-analysis-at-scale-an-instagram-story-8f
 - Nécessite des outils de débogage avancés pour suivre l'échange de données entre plusieurs microservices.
 - Modifications des microservices individuels sans affecter l'ensemble de l'application.
 - Allocations des ressources individuellement, en fonction des besoins => Economie des coûts
-- Promouvoit l'expertise par équipe
+- Promeut l'expertise par équipe
 - Possibilité de changer de technologies selon les services
 - Plus facile de mettre en place un CI/CD
 - La communication par API peut exposer à des faiblesses de sécurité
