@@ -104,7 +104,7 @@ https://instagram-engineering.com/static-analysis-at-scale-an-instagram-story-8f
 - Possibilité de changer de technologies selon les services
 - Plus facile de mettre en place un CI/CD
 - La communication par API peut exposer à des faiblesses de sécurité
-- Peu être moins performante
+- Peut être moins performante
 
 - Architecture de plus en plus populaire
 
