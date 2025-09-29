@@ -26,6 +26,8 @@ Faire des recherches sur chacun des 4 types d'architecture cités plus haut. Pou
 - Scalabilité plus limitée parce qu'elle affecte un système entier
 - Système moins flexible lorsqu'il s'agit d'ajouter des nouvelles fonctionnalités
 - Pose un risque de point de défaillance unique qui entraînerait l'échec de toute l'application
+- Si plus de ressources doivent être allouées, c'est tout le système qui prend les ressources => On passe très vite dans du gaspillage de ressources
+- Limite l'introduction de nouvelles fonnctionnalités
 
 |                    Avanatages                    |                   Incovénients                   |
 |--------------------------------------------------|--------------------------------------------------|
@@ -39,6 +41,8 @@ Faire des recherches sur chacun des 4 types d'architecture cités plus haut. Pou
 |                                                  |localisée                                         |
 |Performante                                       |Nécessite une équipe bien organiqée               |
 
+- De plus en plus d'applications passent d'une architecture Monolithique à une architecture Micro-serivice
+
 ### Définition
 
 L'architecture monolithique utilise une base de code unique pour plusieurs fonctions métiers,
@@ -48,6 +52,8 @@ sur le reste de l'application.
 Modèle de développement logiciel utilisant une base de code unique qui centralise des composants interdépendants afin d'exécuter différentes fonctions métier.
 
 Une architecture monolithique peut être envisageable voire nécessaire dans des petits projets. Mais dès que le projet se complexifie, il peut être compliqué de maintenir.
+
+Une architecture monolithique représente un système simple, développé sur une même base de code. Généralement constitué d'un front, d'un back et d'une BDD.
 
 ### Exemples d'implémentations (schémas)
 
@@ -59,11 +65,14 @@ Une architecture monolithique peut être envisageable voire nécessaire dans des
 ![Exemple d'architecture](https://substackcdn.com/image/fetch/$s_!E9pa!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F0ae8c7d0-6b29-4621-9ee0-5c4d023448bf_1600x1187.png)
 Exemple d'architecture monolithique
 
+![alt text](image.png)
+
 ### Exemples d'utilisation dans des projets connus
 
 - GitLab est sur une architecture "Monorails", basée sur le framework "Ruby on Rails"
 - Instagram Server est également un système monolithe fonctionnant sous Django
 - CMS (Wordpress, Shopify, Prestashop)
+- Les applications Legacy (les anciennes versions de Microsoft Office)
 
 ### Sources
 
@@ -86,12 +95,50 @@ https://instagram-engineering.com/static-analysis-at-scale-an-instagram-story-8f
 
 ## Micro-serives
 
+### Caractéristiques
+- Composants logiciels indépendants dotés de fonctionnalités autonomes qui communiquent entre eux à l'aide d'API.
+- Nécessite davantage de planification et d'infrastructure au départ, mais devient plus facile à gérer et à maintenir dans la durée.
+- Chaque microservice est une entité logicielle indépendante qui nécessite un déploiement conteneurisé individuel.
+- Nécessite des outils de débogage avancés pour suivre l'échange de données entre plusieurs microservices.
+- Modifications des microservices individuels sans affecter l'ensemble de l'application.
+- Allocations des ressources individuellement, en fonction des besoins => Economie des coûts
 
-#### Exemple d'utilisation dans des projets connus
+- Architecture de plus en plus populaire
 
-Netflix est une des premières grosses entreprises a être passée de monolithique à micro-services,
-elle à même remporté le 2015 JAX Special Jury Award
+### Définition
+- Une architecture micro-service représente des systèmes plus complexes où chaque fonctionnalités sont indépendantes.
+
+### Exemples d'implémentations
+![alt text](image-1.png)
+
+### Cas d'utilisations
+- Netflix (une des premières grosses entreprises a être passée de monolithique à micro-services, elle à même remporté le 2015 JAX Special Jury Award)
+- Microsoft Office
+
+### Sources
+- AWS
+- talend
 
 ## Event-driven
 
+### Caractéristiques
+
+### Définition
+
+### Exemples d'implémentations
+
+### Cas d'utilisations
+
+### Sources
+
 ## Hexa
+
+### Caractéristiques
+
+### Définition
+
+### Exemples d'implémentations
+
+### Cas d'utilisations
+
+### Sources
