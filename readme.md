@@ -76,17 +76,11 @@ Exemple d'architecture monolithique
 
 ### Sources
 
-https://aws.amazon.com/fr/compare/the-difference-between-monolithic-and-microservices-architecture/
-
-https://dev.to/adrianbailador/monolithic-architecture-in-net-33i2
-
-https://medium.com/@AtefMADDOURI/architecture-microservice-vs-monolithique-8b019834ba35
-
-https://about.gitlab.com/blog/why-were-sticking-with-ruby-on-rails/
-
-https://handbook.gitlab.com/handbook/engineering/architecture/design-documents/modular_monolith/
-
-https://instagram-engineering.com/static-analysis-at-scale-an-instagram-story-8f498ab71a0c
+[devTo](https://dev.to/adrianbailador/monolithic-architecture-in-net-33i2)
+[medium](https://medium.com/@AtefMADDOURI/architecture-microservice-vs-monolithique-8b019834ba35)
+[gitlab](https://about.gitlab.com/blog/why-were-sticking-with-ruby-on-rails/)
+[hadbook](https://handbook.gitlab.com/handbook/engineering/architecture/design-documents/modular_monolith/)
+[instagram](https://instagram-engineering.com/static-analysis-at-scale-an-instagram-story-8f498ab71a0c)
 [Atlassian](https://www.atlassian.com/fr/microservices/microservices-architecture/microservices-vs-monolith)
 [Amazon](https://aws.amazon.com/fr/compare/the-difference-between-monolithic-and-microservices-architecture/)
 [F5](https://www.f5.com/fr_fr/glossary/monolithic-application#:~:text=Syst%C3%A8mes%20bancaires%20%E2%80%93%20De%20nombreux%20syst%C3%A8mes,qui%20les%20rend%20plus%20s%C3%BBrs.)
@@ -122,6 +116,11 @@ https://instagram-engineering.com/static-analysis-at-scale-an-instagram-story-8f
 ## Event-driven
 
 ### Caractéristiques
+- Exécution de la couche métier à partir d'évènements
+- Est constitué de 3 éléments : les producteurs d'évènements, les routeurs d'évènements et les consommateurs d'évènements
+- Utilisé dans les applications micro-services
+- Permet de coordonner les micro-services
+
 
 ### Définition
 
@@ -130,7 +129,7 @@ https://instagram-engineering.com/static-analysis-at-scale-an-instagram-story-8f
 ### Cas d'utilisations
 
 ### Sources
-
+- [aws](https://aws.amazon.com/fr/event-driven-architecture)
 ## Hexa
 
 ### Caractéristiques
