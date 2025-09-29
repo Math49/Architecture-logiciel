@@ -109,7 +109,8 @@ https://instagram-engineering.com/static-analysis-at-scale-an-instagram-story-8f
 - Architecture de plus en plus populaire
 
 ### Définition
-- Une architecture micro-service représente des systèmes plus complexes où chaque fonctionnalités sont indépendantes.
+Une architecture micro-service représente des systèmes plus complexes où chaque fonctionnalité est indépendante.
+Ils offrent une meilleure tolérance aux problèmes techniques et une plus grande flexibilité par rapport aux architectures monolithiques.
 
 ### Exemples d'implémentations
 ![alt text](image-1.png)
@@ -118,6 +119,8 @@ https://instagram-engineering.com/static-analysis-at-scale-an-instagram-story-8f
 - Netflix (une des premières grosses entreprises a être passée de monolithique à micro-services, elle à même remporté le 2015 JAX Special Jury Award)
 - Microsoft Office
 - Amazon
+- Soundcloud
+
 
 ### Sources
 - AWS
@@ -125,17 +128,51 @@ https://instagram-engineering.com/static-analysis-at-scale-an-instagram-story-8f
 - [IBM](https://www.ibm.com/think/topics/monolithic-architecture)
 - [vFunction](https://vfunction.com/blog/what-is-monolithic-application)
 
+https://www.allthingsdistributed.com/2019/08/modern-applications-at-aws.html
+
+https://developers.soundcloud.com/blog/microservices-and-the-monolith
+
 ## Event-driven
 
 ### Caractéristiques
 
+- Couplage moins étroit (le producteur et le consommateur ne se connaissent pas)
+- Grande flexibilité
+- En cas de panne, les messages s'empilent dans une file d'attente et ne sont pas perdus
+- Peut être implémenté dans des microservices, mais il est moins recommandé dans une solution monolithe
+- Offre un traitement en temps réel, ou à faible latence
+- Les événéments sont persistants, ils sont conservés pendant un certain temps pour qu'ils puissent être consommés à n'importe quel moment
+
 ### Définition
+
+Un événement correspond à un changement d'état, une mise à jour ou tout autre point d'intérêt dans le système. L'EDA (Event-Driven Architecture) capture, traite et publie tous ces événements de façon asynchrone.
+
+Un événement arrive, le producteur l'annonce. Un bus va diffuser l'annonce du producteur, le consommateur va écouter et réagir à l'événement.
 
 ### Exemples d'implémentations
 
+![alt text](EDA.webp)
+
 ### Cas d'utilisations
 
+- Twitter
+- UberEats (notamment pour le système de publicités)
+
 ### Sources
+
+https://www.ibm.com/fr-fr/topics/event-driven-architecture
+
+https://www.confluent.io/learn/event-driven-architecture/
+
+https://aws.amazon.com/fr/event-driven-architecture/
+
+https://fr.wikipedia.org/wiki/Architecture_orient%C3%A9e_%C3%A9v%C3%A9nements
+
+https://medium.com/@seetharamugn/the-complete-guide-to-event-driven-architecture-b25226594227
+
+https://dev.to/yokwejuste/understanding-event-driven-architecture-110o
+
+https://www.uber.com/en-FR/blog/real-time-exactly-once-ad-event-processing/
 
 ## Hexa
 
