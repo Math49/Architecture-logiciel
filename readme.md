@@ -23,15 +23,22 @@ Une architecture monolithique consiste en une seule base de code qui execute tou
 |Pas besoin de traduire le code entre les services |Assez rigide : Difficile d'intégrer des nouvelles | 
 |                                                  |technologies                                      |
 |Plus facile à développer et à déployer            |Difficile à faire évoluer                         |
-|Plus facile à tester, notament en end-to-end      |
-|Plus sécurisé, car moins de communication         |
-|extérieure                                        |    
+|Plus facile à tester, notament en end-to-end      |Un changement peut modifier en cascade=>peu agile |
+|Plus sécurisé, car moins de communication         |Obligé de tout rebuild et redéployer à chaque     |
+|extérieure                                        |changement                                        |  
+|Indépendante                                      |Une erreur peut tout arrêter, même si elle est    |
+|                                                  |localisée                                         |
+|Performante                                       |Nécessite une équipe bien organiqée               |
+
+En résumé : Une architecture monolithique peut être envisageable voire nécessaire dans des petits projets. Mais dès que le projet se complexifie, il peut être compliqué de maintenir.
 
 ![Exemple d'architecture](https://substackcdn.com/image/fetch/$s_!E9pa!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F0ae8c7d0-6b29-4621-9ee0-5c4d023448bf_1600x1187.png)
 Exemple d'architecture monolithique
 
 Sources : 
 - [IBM](https://www.ibm.com/think/topics/monolithic-architecture)
+- [vFunction](https://vfunction.com/blog/what-is-monolithic-application)
+- []
 
 ## Micro-serives
 
