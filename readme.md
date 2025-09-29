@@ -73,18 +73,11 @@ Exemple d'architecture monolithique
 
 ### Sources
 
-https://aws.amazon.com/fr/compare/the-difference-between-monolithic-and-microservices-architecture/
-
-https://dev.to/adrianbailador/monolithic-architecture-in-net-33i2
-
-https://medium.com/@AtefMADDOURI/architecture-microservice-vs-monolithique-8b019834ba35
-
-https://about.gitlab.com/blog/why-were-sticking-with-ruby-on-rails/
-
-https://handbook.gitlab.com/handbook/engineering/architecture/design-documents/modular_monolith/
-
-https://instagram-engineering.com/static-analysis-at-scale-an-instagram-story-8f498ab71a0c
-
+[devTo](https://dev.to/adrianbailador/monolithic-architecture-in-net-33i2)
+[medium](https://medium.com/@AtefMADDOURI/architecture-microservice-vs-monolithique-8b019834ba35)
+[gitlab](https://about.gitlab.com/blog/why-were-sticking-with-ruby-on-rails/)
+[hadbook](https://handbook.gitlab.com/handbook/engineering/architecture/design-documents/modular_monolith/)
+[instagram](https://instagram-engineering.com/static-analysis-at-scale-an-instagram-story-8f498ab71a0c)
 [Atlassian](https://www.atlassian.com/fr/microservices/microservices-architecture/microservices-vs-monolith)
 [Amazon](https://aws.amazon.com/fr/compare/the-difference-between-monolithic-and-microservices-architecture/)
 [F5](https://www.f5.com/fr_fr/glossary/monolithic-application#:~:text=Syst%C3%A8mes%20bancaires%20%E2%80%93%20De%20nombreux%20syst%C3%A8mes,qui%20les%20rend%20plus%20s%C3%BBrs.)
@@ -128,14 +121,34 @@ https://instagram-engineering.com/static-analysis-at-scale-an-instagram-story-8f
 ## Event-driven
 
 ### Caractéristiques
+- Exécution de la couche métier à partir d'évènements
+- Est constitué de 3 éléments : les producteurs d'évènements, les routeurs d'évènements et les consommateurs d'évènements
+- Utilisé dans les applications micro-services
+- Permet de coordonner les micro-services
+- Très libre en therme de langage et plateforme d'exécution
+- Un événement peut avoir comme source des entrées internes ou externes. Les événements peuvent être générés par un utilisateur (par exemple, clic de souris, frappe au clavier), une source externe (par exemple, une sortie de capteur) ou le système (par exemple, le chargement d'un programme).
+- Adaptation aux changements, en prenant des décisions en temps réel
+
+Modèle de publication/abonnement
+Il s'agit d'une infrastructure de messagerie basée sur l'abonnement à un flux d'événements. Avec ce modèle, une fois qu'un événement s'est produit ou a été publié, il est envoyé aux abonnés qui doivent en être informés.
+
+Modèle de flux d'événements
+Avec un modèle de flux d'événements, les événements sont écrits dans un journal. Les consommateurs d'événements ne s'abonnent pas à un flux d'événements. Ils peuvent lire toute partie du flux et le rejoindre à tout moment.
 
 ### Définition
+Un système orienté événements est conçu pour capturer, communiquer et traiter les événements entre des services dissociés. Les systèmes peuvent ainsi rester asynchrones tout en partageant des informations et en accomplissant des tâches. 
 
 ### Exemples d'implémentations
+- Est utile pour de la surveillance de ressources
+- 
 
 ### Cas d'utilisations
+- Sotheby's a mis en place une architecture de type EDA pour son système de gestion des enchères
 
 ### Sources
+- [aws](https://aws.amazon.com/fr/event-driven-architecture)
+- [wikipedia](https://fr.wikipedia.org/wiki/Architecture_orientée_événements)
+- [redhat](https://www.redhat.com/fr/topics/integration/what-is-event-driven-architecture)
 
 ## Hexa
 
