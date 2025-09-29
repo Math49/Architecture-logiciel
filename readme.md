@@ -29,17 +29,17 @@ Faire des recherches sur chacun des 4 types d'architecture cités plus haut. Pou
 - Si plus de ressources doivent être allouées, c'est tout le système qui prend les ressources => On passe très vite dans du gaspillage de ressources
 - Limite l'introduction de nouvelles fonnctionnalités
 
-|                    Avantages                    |                   Inconvénients                   |
-|--------------------------------------------------|--------------------------------------------------|
-|Pas besoin de traduire le code entre les services |Assez rigide : Difficile d'intégrer des nouvelles | 
-|                                                  |technologies                                      |
-|Plus facile à développer et à déployer            |Difficile à faire évoluer                         |
-|Plus facile à tester, notamment en end-to-end     |Un changement peut modifier en cascade=>peu agile |
-|Plus sécurisé, car moins de communication         |Obligé de tout rebuild et redéployer à chaque     |
-|extérieure                                        |changement                                        |  
-|Indépendante                                      |Une erreur peut tout arrêter, même si elle est    |
-|                                                  |localisée                                         |
-|Performante                                       |Nécessite une équipe bien organiqée               |
+|                    Avantages                    | Inconvénients                                     |
+|--------------------------------------------------|---------------------------------------------------|
+|Pas besoin de traduire le code entre les services | Assez rigide : Difficile d'intégrer des nouvelles | 
+|                                                  | technologies                                      |
+|Plus facile à développer et à déployer            | Difficile à faire évoluer                         |
+|Plus facile à tester, notamment en end-to-end     | Un changement peut modifier en cascade=>peu agile |
+|Plus sécurisé, car moins de communication         | Obligé de tout rebuild et redéployer à chaque     |
+|extérieure                                        | changement                                        |  
+|Indépendante                                      | Une erreur peut tout arrêter, même si elle est    |
+|                                                  | localisée                                         |
+|Performante                                       | Nécessite une équipe bien organisée               |
 
 De plus en plus d'applications passent d'une architecture Monolithique à une architecture Micro-serivice
 
@@ -123,11 +123,48 @@ https://instagram-engineering.com/static-analysis-at-scale-an-instagram-story-8f
 
 ### Définition
 
+L'event driven architecture (EDA) est un modèle de conception logicielle centré sur tout ce qui est consommation,
+réaction, détection et production d'évènement.
+
+Un évènement est une action ou un état sur une app ou son environnement (clic de souris, réception de message, temprérature)
+
+3 composants principaux pour une architecture EDA : 
+
+- **Producteurs d'évènements** : génère les évènements qui sont envoyés au gestionnaire d'évènement ou au user direct. Ne se préoccupe plus de l'évènement après
+- **Canal d'évènements** : C'est le medium, l'évènement qui passe du producteur au consommateur passe par le canal, il existe différente formes de canal tel les files, piles, bus
+- **Consommateur d'évènements** : Il est abonné à un type d'évènements spécifique et exécute le traitement correspondant à son type d'évènement
+
+**Flux de travail typique**
+
+- Émission : Un producteur détecte un état ou un changement et crée un événement.
+- Publication : L'événement est publié sur un canal.
+- Réception : Les consommateurs abonnés au canal reçoivent l'événement.
+- Traitement : Chaque consommateur effectue une action déterminée en réponse à l'événement.
+
+**Avantage**
+
+- Découplage
+- Réactivité
+- Scalabilité
+- Flexibilité
+
 ### Exemples d'implémentations
+
+- Système d'interface graphique, les actions utilisateur déclenchent des évènements
+- Dispositif IoT
+- Microservices
+
+![event_driven.png](event_driven.png)
 
 ### Cas d'utilisations
 
+- Netflix utilise l'EDA avec Apache Kafka 
+- Uber
+
 ### Sources
+
+[Bob le développeur](https://www.bob-le-developpeur.com/notions/event-driven-architecture)
+[Microsoft](https://learn.microsoft.com/fr-fr/azure/architecture/guide/architecture-styles/event-driven)
 
 ## Hexa
 
