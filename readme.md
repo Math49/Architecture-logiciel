@@ -100,6 +100,11 @@ https://instagram-engineering.com/static-analysis-at-scale-an-instagram-story-8f
 - Nécessite des outils de débogage avancés pour suivre l'échange de données entre plusieurs microservices.
 - Modifications des microservices individuels sans affecter l'ensemble de l'application.
 - Allocations des ressources individuellement, en fonction des besoins => Economie des coûts
+- Promouvoit l'expertise par équipe
+- Possibilité de changer de technologies selon les services
+- Plus facile de mettre en place un CI/CD
+- La communication par API peut exposer à des faiblesses de sécurité
+- Peu être moins performante
 
 - Architecture de plus en plus populaire
 
@@ -112,10 +117,13 @@ https://instagram-engineering.com/static-analysis-at-scale-an-instagram-story-8f
 ### Cas d'utilisations
 - Netflix (une des premières grosses entreprises a être passée de monolithique à micro-services, elle à même remporté le 2015 JAX Special Jury Award)
 - Microsoft Office
+- Amazon
 
 ### Sources
 - AWS
 - talend
+- [IBM](https://www.ibm.com/think/topics/monolithic-architecture)
+- [vFunction](https://vfunction.com/blog/what-is-monolithic-application)
 
 ## Event-driven
 
