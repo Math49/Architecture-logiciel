@@ -127,15 +127,39 @@ https://instagram-engineering.com/static-analysis-at-scale-an-instagram-story-8f
 
 ## Event-driven
 
+![Schéma simplifié de Event-Driven](https://www.scylladb.com/wp-content/uploads/Event-Driven-Architecture-diagram.png)
+![Exemple plus complet](https://hazelcast.com/wp-content/uploads/2021/12/20_EventDrivenArchitecture.png)
+![Exemple plus concret](https://media.geeksforgeeks.org/wp-content/uploads/20241024120522004425/event-driven-architecture-of-e-commerce-site.webp)*
+
 ### Caractéristiques
+- Rend la maintenance plus facile
+- Très réactif
+- Scallable : l'ajout de consommateur ou d'émetteurs est simple et sans cascade
+- Flexible
+- Permet la communication asynchrone
+- Peu devenir complexe avec plus d'événements
+- Maintenir l'ordre des événement peut être compliqué
+- Plus compliqué à débugger
+- Peu causer d'important délai en fonction de l'ordre de traitement
 
 ### Définition
+C'est un modèle de conception logicielle centré sur la production, la détection, la consommation et la réaction aux évenements. 
+
+Cette architecture se compose principalement de 3 éléments : émetteurs, canal et consommateurs. Un émetteur va générer des évenements, le canal va les transmettre et un consommateur va réagir à l'évenement. Un consommateur suit un type d'événement et effectue une certaine logique en réponse.
 
 ### Exemples d'implémentations
-
+- **Modèle de publication/abonnement**: Une fois qu'un événemment est émit, il est envoyé aux consommateurs immédiatement
+- **Modèle de flux d'événements**: Les évenements sont inscrits dans un journal, et les consommateur peuvent lire tout le journal
 ### Cas d'utilisations
+- Wix 
+- Uber
 
 ### Sources
+
+- [Bob le développeur](https://www.bob-le-developpeur.com/notions/event-driven-architecture)
+- [Red Hat](https://www.redhat.com/fr/topics/integration/what-is-event-driven-architecture)
+- [Microsoft](https://learn.microsoft.com/fr-fr/azure/architecture/guide/architecture-styles/event-driven)
+- [Estuary](https://estuary.dev/blog/event-driven-architecture-examples)
 
 ## Hexa
 
