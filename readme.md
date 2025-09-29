@@ -153,8 +153,16 @@ Un système orienté événements est conçu pour capturer, communiquer et trait
 ## Hexa
 
 ### Caractéristiques
+- Connexion entre les composants à travers de ports
+- lié au Domain-Driven Design
+- Organisation autour d'un noyau métier
+
 
 ### Définition
+
+L’architecture hexagonale favorise la séparation des préoccupations (separation of concerns) en organisant le code de manière à ce que le noyau ne dépende pas des détails d’implémentation externes. Cela rend le système plus flexible, facilitant les tests automatisés et permettant le remplacement ou la mise à jour facile des composants externes sans affecter le cœur métier.
+
+l’architecture hexagonale est une approche qui encourage la modularité, la maintenabilité et la testabilité des systèmes logiciels en isolant le cœur métier des détails d’implémentation.
 
 ### Exemples d'implémentations
 
