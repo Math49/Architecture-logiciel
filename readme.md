@@ -44,7 +44,36 @@ Une architecture monolithique représente un système simple, développé sur un
 
 ## Micro-serives
 
+### Caractéristiques
+
+### Définition
+
+### Exemples d'implémentations
+
+### Cas d'utilisations
+
+### sources
 
 ## Event-driven
 
+### Caractéristiques
+
+### Définition
+
+### Exemples d'implémentations
+
+### Cas d'utilisations
+
+### sources
+
 ## Hexa
+
+### Caractéristiques
+
+### Définition
+
+### Exemples d'implémentations
+
+### Cas d'utilisations
+
+### sources
