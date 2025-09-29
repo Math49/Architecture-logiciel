@@ -45,14 +45,28 @@ Une architecture monolithique représente un système simple, développé sur un
 ## Micro-serives
 
 ### Caractéristiques
+- Composants logiciels indépendants dotés de fonctionnalités autonomes qui communiquent entre eux à l'aide d'API.
+- Nécessite davantage de planification et d'infrastructure au départ, mais devient plus facile à gérer et à maintenir dans la durée.
+- Chaque microservice est une entité logicielle indépendante qui nécessite un déploiement conteneurisé individuel.
+- Nécessite des outils de débogage avancés pour suivre l'échange de données entre plusieurs microservices.
+- Modifications des microservices individuels sans affecter l'ensemble de l'application.
+- Allocations des ressources individuellement, en fonction des besoins => Economie des coûts
+
+- Architecture de plus en plus populaire
 
 ### Définition
+- Une architecture micro-service représente des systèmes plus complexes où chaque fonctionnalités sont indépendantes.
 
 ### Exemples d'implémentations
+![alt text](image-1.png)
 
 ### Cas d'utilisations
+- Netflix
+- Microsoft Office
 
 ### sources
+- AWS
+- talend
 
 ## Event-driven
 
