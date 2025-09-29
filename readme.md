@@ -5,7 +5,7 @@
 
 # TP 1 :
 
-Faire des recherches sur chacun des 4 types d'architecture cités plus haut. Pour chacun récupérer : 
+Faire des recherches sur chacun des 4 types d'architecture cités plus haut. Pour chacun récupérer :
 
 - Une liste de caractéristiques
 - Une définition simple et efficace
@@ -29,17 +29,24 @@ Faire des recherches sur chacun des 4 types d'architecture cités plus haut. Pou
 
 ### Définition
 
+L'architecture monolithique utilise une base de code unique pour plusieurs fonctions métiers,
+chaque service sont interdépendants, ce qui implique que la moindre modification peut avoir des répercussions
+sur le reste de l'application.
+
 Modèle de développement logiciel utilisant une base de code unique qui centralise des composants interdépendants afin d'exécuter différentes fonctions métier.
 
 ### Exemples d'implémentations (schémas)
 
-- Monolithe modulaire (ou diagramme de composants) : un seul déploiement découpé en plusieurs modules, donc une séparation des couches existant tout de même sur une même base de code
+- Monolithe modulaire (ou diagramme de composants) : un seul système découpé en plusieurs modules, donc une séparation des couches existant tout de même sur une même base de code
 - Diagramme de dépendances : structuration du code monolithe par fonctionnalité plutôt que par couche, limitant les interfaces
+
+![monolithique.png](monolithique.png)
 
 ### Exemples d'utilisation dans des projets connus
 
 - GitLab est sur une architecture "Monorails", basée sur le framework "Ruby on Rails"
 - Instagram Server est également un système monolithe fonctionnant sous Django
+- CMS (Wordpress, Shopify, Prestashop)
 
 ### Sources
 
@@ -54,9 +61,17 @@ https://about.gitlab.com/blog/why-were-sticking-with-ruby-on-rails/
 https://handbook.gitlab.com/handbook/engineering/architecture/design-documents/modular_monolith/
 
 https://instagram-engineering.com/static-analysis-at-scale-an-instagram-story-8f498ab71a0c
+[Atlassian](https://www.atlassian.com/fr/microservices/microservices-architecture/microservices-vs-monolith)
+[Amazon](https://aws.amazon.com/fr/compare/the-difference-between-monolithic-and-microservices-architecture/)
+[F5](https://www.f5.com/fr_fr/glossary/monolithic-application#:~:text=Syst%C3%A8mes%20bancaires%20%E2%80%93%20De%20nombreux%20syst%C3%A8mes,qui%20les%20rend%20plus%20s%C3%BBrs.)
 
 ## Micro-serives
 
+
+#### Exemple d'utilisation dans des projets connus
+
+Netflix est une des premières grosses entreprises a être passée de monolithique à micro-services,
+elle à même remporté le 2015 JAX Special Jury Award
 
 ## Event-driven
 
