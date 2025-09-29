@@ -136,7 +136,7 @@ https://developers.soundcloud.com/blog/microservices-and-the-monolith
 
 ### Caractéristiques
 
-- Couplage moins étroit (le producteur et le consommateur ne se connaissent pas)
+- Couplage moins étroit (l'émetteur et le consommateur ne se connaissent pas)
 - Grande flexibilité
 - En cas de panne, les messages s'empilent dans une file d'attente et ne sont pas perdus
 - Peut être implémenté dans des microservices, mais il est moins recommandé dans une solution monolithe
@@ -147,7 +147,7 @@ https://developers.soundcloud.com/blog/microservices-and-the-monolith
 
 Un événement correspond à un changement d'état, une mise à jour ou tout autre point d'intérêt dans le système. L'EDA (Event-Driven Architecture) capture, traite et publie tous ces événements de façon asynchrone.
 
-Un événement arrive, le producteur l'annonce. Un bus va diffuser l'annonce du producteur, le consommateur va écouter et réagir à l'événement.
+Un événement arrive, l'émetteur l'annonce. Un bus va diffuser l'annonce de l'émetteur, le consommateur va écouter et réagir à l'événement.
 
 ### Exemples d'implémentations
 
