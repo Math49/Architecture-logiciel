@@ -220,9 +220,11 @@ Inversion de dépendance, c'est le serveur qui décide du protocol de communicat
 
 ### Définition
 
-![diagram_archi_hexagonal.png](diagram_archi_hexagonal.png)
+L'architecture hexagonale isole la couche métier du reste de la solution en le faisant dépendre uniquement des ports. Les adaptateurs implémentent ces ports, des interfaces, pour connecter la logique métier aux couches externes (base de données, UI, API, file de messages)
 
 ### Exemples d'implémentations
+
+![alt text](image-2.png)
 
 ### Cas d'utilisations
 
@@ -230,3 +232,4 @@ Inversion de dépendance, c'est le serveur qui décide du protocol de communicat
 
 [Code Insider](https://www.youtube.com/watch?v=wKXUd_WbTTc)
 [Zenika TV](https://www.youtube.com/watch?v=MNXcuIGmYQw&t=30s)
+[Medium - Ports and Adapters](https://medium.com/@tejasrawat_82721/hexagonal-architecture-ports-and-adapters-explained-a-practical-guide-from-concept-to-code-7903053f38f4)
