@@ -96,7 +96,7 @@ https://instagram-engineering.com/static-analysis-at-scale-an-instagram-story-8f
 [IBM](https://www.ibm.com/think/topics/monolithic-architecture)
 [vFunction](https://vfunction.com/blog/what-is-monolithic-application)
 
-## Micro-serives
+## Micro-services
 
 ### Caractéristiques
 - Composants logiciels indépendants dotés de fonctionnalités autonomes qui communiquent entre eux à l'aide d'API.
@@ -105,11 +105,17 @@ https://instagram-engineering.com/static-analysis-at-scale-an-instagram-story-8f
 - Nécessite des outils de débogage avancés pour suivre l'échange de données entre plusieurs microservices.
 - Modifications des microservices individuels sans affecter l'ensemble de l'application.
 - Allocations des ressources individuellement, en fonction des besoins => Economie des coûts
+- Promeut l'expertise par équipe
+- Possibilité de changer de technologies selon les services
+- Plus facile de mettre en place un CI/CD
+- La communication par API peut exposer à des faiblesses de sécurité
+- Peut être moins performante
 
 - Architecture de plus en plus populaire
 
 ### Définition
-- Une architecture micro-service représente des systèmes plus complexes où chaque fonctionnalités sont indépendantes.
+Une architecture micro-service représente des systèmes plus complexes où chaque fonctionnalité est indépendante.
+Ils offrent une meilleure tolérance aux problèmes techniques et une plus grande flexibilité par rapport aux architectures monolithiques.
 
 ### Exemples d'implémentations
 ![alt text](image-1.png)
@@ -117,14 +123,30 @@ https://instagram-engineering.com/static-analysis-at-scale-an-instagram-story-8f
 ### Cas d'utilisations
 - Netflix (une des premières grosses entreprises a être passée de monolithique à micro-services, elle à même remporté le 2015 JAX Special Jury Award)
 - Microsoft Office
+- Amazon
+- Soundcloud
+
 
 ### Sources
 - AWS
 - talend
+- [IBM](https://www.ibm.com/think/topics/monolithic-architecture)
+- [vFunction](https://vfunction.com/blog/what-is-monolithic-application)
+
+https://www.allthingsdistributed.com/2019/08/modern-applications-at-aws.html
+
+https://developers.soundcloud.com/blog/microservices-and-the-monolith
 
 ## Event-driven
 
 ### Caractéristiques
+
+- Couplage moins étroit (l'émetteur et le consommateur ne se connaissent pas)
+- Grande flexibilité
+- En cas de panne, les messages s'empilent dans une file d'attente et ne sont pas perdus
+- Peut être implémenté dans des microservices, mais il est moins recommandé dans une solution monolithe
+- Offre un traitement en temps réel, ou à faible latence
+- Les événéments sont persistants, ils sont conservés pendant un certain temps pour qu'ils puissent être consommés à n'importe quel moment
 
 ### Définition
 
@@ -197,11 +219,14 @@ Si on veut ajouter un nouveau service, il suffit d'ajouter un nouvel adaptateur
 Inversion de dépendance, c'est le serveur qui décide du protocol de communication, pas l'inverse
 
 ### Définition
+
 ![diagram_archi_hexagonal.png](diagram_archi_hexagonal.png)
+
 ### Exemples d'implémentations
 
 ### Cas d'utilisations
 
 ### Sources
+
 [Code Insider](https://www.youtube.com/watch?v=wKXUd_WbTTc)
 [Zenika TV](https://www.youtube.com/watch?v=MNXcuIGmYQw&t=30s)
