@@ -153,19 +153,32 @@ Un système orienté événements est conçu pour capturer, communiquer et trait
 ## Hexa
 
 ### Caractéristiques
-- Connexion entre les composants à travers de ports
-- lié au Domain-Driven Design
-- Organisation autour d'un noyau métier
-
+- Coeur métier isolé : la logique métier (domain + use cases) ne dépend pas de la BDD, du framework web, ni de l’UI. 
+- Ports : ce sont des interfaces définies par le domaine pour interagir avec l’extérieur (ex. UserRepository, PaymentGateway, EmailSender). 
+- Adapters : ce sont des implémentations concrètes des ports (ex. SqlUserRepository, MongoUserRepository, controller REST, CLI, etc.). 
+- Symétrie entrée / sortie : UI, API, BDD, queue de messages, tests automatiques sont tous vus comme des “clients” branchés sur le même cœur via des ports. 
+- Faible couplage & forte testabilité : tu peux tester le cœur métier avec des doubles (mocks/fakes) sans démarrer BDD ni serveur HTTP. 
+- Échangeabilité des technos : tu peux remplacer une BDD, un système de paiement, une API externe en changeant seulement l’adapter. 
+- Compatible DDD / Clean Architecture : très utilisé avec Domain-Driven Design et apparenté aux autres archis “domain-centric” (Onion, Clean). 
+- Alternative aux couches classiques : ce n’est pas qu’un empilement UI → Service → Repository ; le cœur ne “voit” pas l’infrastructure. 
 
 ### Définition
 
-L’architecture hexagonale favorise la séparation des préoccupations (separation of concerns) en organisant le code de manière à ce que le noyau ne dépende pas des détails d’implémentation externes. Cela rend le système plus flexible, facilitant les tests automatisés et permettant le remplacement ou la mise à jour facile des composants externes sans affecter le cœur métier.
-
-l’architecture hexagonale est une approche qui encourage la modularité, la maintenabilité et la testabilité des systèmes logiciels en isolant le cœur métier des détails d’implémentation.
+L’architecture hexagonale (ou Ports & Adapters) est un style d’architecture qui organise ton application autour de son cœur métier (domain/core), et fait passer toutes les interactions externes (web, BDD, files, autres services…) par des ports (interfaces) et des adapters (implémentations techniques).
+Objectif : avoir un cœur métier indépendant des technologies, facilement testable et remplaçable.
 
 ### Exemples d'implémentations
 
 ### Cas d'utilisations
-
+- MMA
 ### Sources
+https://alistair.cockburn.us/hexagonal-architecture
+https://en.wikipedia.org/wiki/Hexagonal_architecture_(software)
+https://blog.octo.com/architecture-hexagonale-trois-principes-et-un-exemple-dimplementation
+https://docs.aws.amazon.com/prescriptive-guidance/latest/cloud-design-patterns/hexagonal-architecture.html
+https://www.baeldung.com/hexagonal-architecture-ddd-spring
+https://www.arhohuttunen.com/hexagonal-architecture-spring-boot/
+https://scalastic.io/en/hexagonal-architecture/
+https://codesoapbox.dev/ports-adapters-aka-hexagonal-architecture-explained/
+https://miladezzat.medium.com/hexagonal-architecture-ports-and-adapters-pattern-5ad2421802ec
+https://github.com/alexander-schranz/hexagonal-architecture-study
