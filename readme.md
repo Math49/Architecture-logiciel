@@ -13,6 +13,9 @@ Faire des recherches sur chacun des 4 types d'architecture cités plus haut. Pou
 - Des exemples d'utilisation dans des projets connus
 - La liste des sources (liens web) où vous avez trouvé les informations
 
+## Définitions 
+
+- overengineering : Sur-anticipation qui coûte plus chère (en temps de développement) qu'elle ne rapporte(en coût financier). 
 
 ## Monolithique
 
@@ -164,11 +167,27 @@ Cette architecture se compose principalement de 3 éléments : émetteurs, canal
 ## Hexa
 
 ### Caractéristiques
+- Faiblement couplé -> peu de dépendances
+- Composant testable indépendament, sans bdd ou interface
+- Bonne maintabilité 
+- Fonctionne avec des *port* et des *adaptateur* => port :  Il abtrait le besoin métier de la donnée pour quelle puisse être lue/écrite par n'importe quelle techno sans trop de contexte & adapteur: traduit ensuite pour la techno sur laquelle elle est effectivement utilisée
+- Sépare le code par fonction plutôt que par techno
+- composants facilment échangeable => communique tous entre eux ? Pas de front->back->bdd par ex ?
+- Permet de mettre à jour les interfaces et les BDD sans changer la logique
+- Les ports et adaptateur ajoute une couche supplémentaires, ce qui pâti sur les performances
+- Complexe
+- Difficile à faire tourner localement  
 
 ### Définition
 
+L'architecture Hexagonale consiste en un ensemble de modules qui sont reliés par des ports et des adaptateurs. Les ports sont des points de "sorties" qui abstraient le besoin métier de la donnée pour quelle puisse être lue et écrite par n'importe quelle technologie sans trop de contexte. Ils sont connectés avec les adapatateurs, les points d'"entrées", qui traduisent la donnée reçue par le port pour le module. Les modules peuvent être reliés à plusieurs autres modules, ce qui fait qu'une fois collés, le système ressemble à une ruche (et chaque module individuel à une alvéole).
+
 ### Exemples d'implémentations
+![alt text](image-2.png)
+![alt text](image-3.png)
 
 ### Cas d'utilisations
 
+
 ### Sources
+- [Alex Hyett - Hexagonal Architecture: What You Need To Know - Simple Explanation](https://www.youtube.com/watch?v=bDWApqAUjEI)
