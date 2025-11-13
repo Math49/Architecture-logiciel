@@ -2,6 +2,11 @@
 
 - monolithique => 1 seul gros projet (MVC), micro-services => authentification (SSO), Event-Driven => Winform, Hexa => optimisation séparation des responsabilités, code métier, etc...
 
+## Définitions
+
+- rigidité => Capacité d'un système à s'adapter aux changement
+- scalabilité => Capacité d'une application grossir 
+- overengineering =>
 
 # TP 1 :
 
@@ -29,17 +34,17 @@ Faire des recherches sur chacun des 4 types d'architecture cités plus haut. Pou
 - Si plus de ressources doivent être allouées, c'est tout le système qui prend les ressources => On passe très vite dans du gaspillage de ressources
 - Limite l'introduction de nouvelles fonnctionnalités
 
-|                    Avantages                    |                   Inconvénients                   |
-|--------------------------------------------------|--------------------------------------------------|
-|Pas besoin de traduire le code entre les services |Assez rigide : Difficile d'intégrer des nouvelles | 
-|                                                  |technologies                                      |
-|Plus facile à développer et à déployer            |Difficile à faire évoluer                         |
-|Plus facile à tester, notamment en end-to-end     |Un changement peut modifier en cascade=>peu agile |
-|Plus sécurisé, car moins de communication         |Obligé de tout rebuild et redéployer à chaque     |
-|extérieure                                        |changement                                        |  
-|Indépendante                                      |Une erreur peut tout arrêter, même si elle est    |
-|                                                  |localisée                                         |
-|Performante                                       |Nécessite une équipe bien organiqée               |
+|                    Avantages                    | Inconvénients                                     |
+|--------------------------------------------------|---------------------------------------------------|
+|Pas besoin de traduire le code entre les services | Assez rigide : Difficile d'intégrer des nouvelles | 
+|                                                  | technologies                                      |
+|Plus facile à développer et à déployer            | Difficile à faire évoluer                         |
+|Plus facile à tester, notamment en end-to-end     | Un changement peut modifier en cascade=>peu agile |
+|Plus sécurisé, car moins de communication         | Obligé de tout rebuild et redéployer à chaque     |
+|extérieure                                        | changement                                        |  
+|Indépendante                                      | Une erreur peut tout arrêter, même si elle est    |
+|                                                  | localisée                                         |
+|Performante                                       | Nécessite une équipe bien organisée               |
 
 De plus en plus d'applications passent d'une architecture Monolithique à une architecture Micro-serivice
 
@@ -145,43 +150,83 @@ https://developers.soundcloud.com/blog/microservices-and-the-monolith
 
 ### Définition
 
-Un événement correspond à un changement d'état, une mise à jour ou tout autre point d'intérêt dans le système. L'EDA (Event-Driven Architecture) capture, traite et publie tous ces événements de façon asynchrone.
+L'event driven architecture (EDA) est un modèle de conception logicielle centré sur tout ce qui est consommation,
+réaction, détection et production d'évènement.
 
-Un événement arrive, l'émetteur l'annonce. Un bus va diffuser l'annonce de l'émetteur, le consommateur va écouter et réagir à l'événement.
+Un évènement est une action ou un état sur une app ou son environnement (clic de souris, réception de message, temprérature)
+
+3 composants principaux pour une architecture EDA : 
+
+- **Producteurs d'évènements** : génère les évènements qui sont envoyés au gestionnaire d'évènement ou au user direct. Ne se préoccupe plus de l'évènement après
+- **Canal d'évènements** : C'est le medium, l'évènement qui passe du producteur au consommateur passe par le canal, il existe différente formes de canal tel les files, piles, bus
+- **Consommateur d'évènements** : Il est abonné à un type d'évènements spécifique et exécute le traitement correspondant à son type d'évènement
+
+**Flux de travail typique**
+
+- Émission : Un producteur détecte un état ou un changement et crée un événement.
+- Publication : L'événement est publié sur un canal.
+- Réception : Les consommateurs abonnés au canal reçoivent l'événement.
+- Traitement : Chaque consommateur effectue une action déterminée en réponse à l'événement.
+
+**Avantage**
+
+- Découplage : Les producteurs et consommateurs d'événements sont largement indépendants les uns des autres, ce qui facilite la maintenance et l'évolution du système.
+- Réactivité : Les systèmes basés sur des événements sont très réactifs et peuvent traiter les changements en temps réel.
+- Scalabilité : Il est plus facile de scaler un système EDA car on peut ajouter des consommateurs sans perturber les producteurs, et vice versa.
+- Flexibilité : Les nouvelles fonctionnalités peuvent être intégrées comme nouveaux consommateurs d'événements sans modification du flux existant.
 
 ### Exemples d'implémentations
 
-![alt text](EDA.webp)
+- Système d'interface graphique, les actions utilisateur déclenchent des évènements
+- Dispositif IoT
+- Microservices
+
+![event_driven.png](event_driven.png)
 
 ### Cas d'utilisations
 
-- Twitter
-- UberEats (notamment pour le système de publicités)
+- Netflix utilise l'EDA avec Apache Kafka 
+- Uber
 
 ### Sources
 
-https://www.ibm.com/fr-fr/topics/event-driven-architecture
-
-https://www.confluent.io/learn/event-driven-architecture/
-
-https://aws.amazon.com/fr/event-driven-architecture/
-
-https://fr.wikipedia.org/wiki/Architecture_orient%C3%A9e_%C3%A9v%C3%A9nements
-
-https://medium.com/@seetharamugn/the-complete-guide-to-event-driven-architecture-b25226594227
-
-https://dev.to/yokwejuste/understanding-event-driven-architecture-110o
-
-https://www.uber.com/en-FR/blog/real-time-exactly-once-ad-event-processing/
+[Bob le développeur](https://www.bob-le-developpeur.com/notions/event-driven-architecture)
+[Microsoft](https://learn.microsoft.com/fr-fr/azure/architecture/guide/architecture-styles/event-driven)
 
 ## Hexa
 
 ### Caractéristiques
 
+3 couches :
+- Domaine : cette couche contient la logique métier centrale de l’application. Elle est indépendante des autres couches et encapsule toutes les règles et comportements spécifiques au domaine.
+- Application : la couche application orchestre les cas d’utilisation et les interactions entre le domaine et les autres composants. Elle ne contient aucune logique métier mais appelle les services du domaine.
+- Infrastructure : cette couche gère les détails techniques tels que la base de données, les API externes, les interfaces utilisateur, etc. Elle contient les implémentations concrètes nécessaires pour le fonctionnement de l’application
+
+L'infrastructure, c'est la couche qui contient tout ce qui est technique et spécifique aux dépendances
+
+Isoler la couche métiers des autres couches de l'application
+Les autres couches sont reliées au bloc métier via des ports et des adaptateurs pour discuter avec l'extérieur
+
+Adaptateurs d'entrée : Ils permettent d'ingérer des données d'autres services techniques, on spécifie nous-mêmes les règles
+donc c'est de l'inversion de dépendance, on peut ajouter des couches techniques sans toucher au métier,
+c'est la technique qui est formattée pour être adaptée à la couche métier,
+ainsi pas besoin de modifier la couche métier ainsi + de capacité d'adaptation
+
+Adaptateurs de sortie : Envoyer les données aux couches extérieures compréhensible pour les services externes
+
+Si on veut ajouter un nouveau service, il suffit d'ajouter un nouvel adaptateur
+
+Inversion de dépendance, c'est le serveur qui décide du protocol de communication, pas l'inverse
+
 ### Définition
+
+![diagram_archi_hexagonal.png](diagram_archi_hexagonal.png)
 
 ### Exemples d'implémentations
 
 ### Cas d'utilisations
 
 ### Sources
+
+[Code Insider](https://www.youtube.com/watch?v=wKXUd_WbTTc)
+[Zenika TV](https://www.youtube.com/watch?v=MNXcuIGmYQw&t=30s)
