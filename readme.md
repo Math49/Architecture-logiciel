@@ -78,18 +78,11 @@ Exemple d'architecture monolithique
 
 ### Sources
 
-https://aws.amazon.com/fr/compare/the-difference-between-monolithic-and-microservices-architecture/
-
-https://dev.to/adrianbailador/monolithic-architecture-in-net-33i2
-
-https://medium.com/@AtefMADDOURI/architecture-microservice-vs-monolithique-8b019834ba35
-
-https://about.gitlab.com/blog/why-were-sticking-with-ruby-on-rails/
-
-https://handbook.gitlab.com/handbook/engineering/architecture/design-documents/modular_monolith/
-
-https://instagram-engineering.com/static-analysis-at-scale-an-instagram-story-8f498ab71a0c
-
+[devTo](https://dev.to/adrianbailador/monolithic-architecture-in-net-33i2)
+[medium](https://medium.com/@AtefMADDOURI/architecture-microservice-vs-monolithique-8b019834ba35)
+[gitlab](https://about.gitlab.com/blog/why-were-sticking-with-ruby-on-rails/)
+[hadbook](https://handbook.gitlab.com/handbook/engineering/architecture/design-documents/modular_monolith/)
+[instagram](https://instagram-engineering.com/static-analysis-at-scale-an-instagram-story-8f498ab71a0c)
 [Atlassian](https://www.atlassian.com/fr/microservices/microservices-architecture/microservices-vs-monolith)
 [Amazon](https://aws.amazon.com/fr/compare/the-difference-between-monolithic-and-microservices-architecture/)
 [F5](https://www.f5.com/fr_fr/glossary/monolithic-application#:~:text=Syst%C3%A8mes%20bancaires%20%E2%80%93%20De%20nombreux%20syst%C3%A8mes,qui%20les%20rend%20plus%20s%C3%BBrs.)
@@ -140,6 +133,19 @@ https://developers.soundcloud.com/blog/microservices-and-the-monolith
 ## Event-driven
 
 ### Caractéristiques
+- Exécution de la couche métier à partir d'évènements
+- Est constitué de 3 éléments : les producteurs d'évènements, les routeurs d'évènements et les consommateurs d'évènements
+- Utilisé dans les applications micro-services
+- Permet de coordonner les micro-services
+- Très libre en therme de langage et plateforme d'exécution
+- Un événement peut avoir comme source des entrées internes ou externes. Les événements peuvent être générés par un utilisateur (par exemple, clic de souris, frappe au clavier), une source externe (par exemple, une sortie de capteur) ou le système (par exemple, le chargement d'un programme).
+- Adaptation aux changements, en prenant des décisions en temps réel
+
+Modèle de publication/abonnement
+Il s'agit d'une infrastructure de messagerie basée sur l'abonnement à un flux d'événements. Avec ce modèle, une fois qu'un événement s'est produit ou a été publié, il est envoyé aux abonnés qui doivent en être informés.
+
+Modèle de flux d'événements
+Avec un modèle de flux d'événements, les événements sont écrits dans un journal. Les consommateurs d'événements ne s'abonnent pas à un flux d'événements. Ils peuvent lire toute partie du flux et le rejoindre à tout moment.
 
 - Couplage moins étroit (l'émetteur et le consommateur ne se connaissent pas)
 - Grande flexibilité
@@ -149,6 +155,7 @@ https://developers.soundcloud.com/blog/microservices-and-the-monolith
 - Les événéments sont persistants, ils sont conservés pendant un certain temps pour qu'ils puissent être consommés à n'importe quel moment
 
 ### Définition
+Un système orienté événements est conçu pour capturer, communiquer et traiter les événements entre des services dissociés. Les systèmes peuvent ainsi rester asynchrones tout en partageant des informations et en accomplissant des tâches. 
 
 L'event driven architecture (EDA) est un modèle de conception logicielle centré sur tout ce qui est consommation,
 réaction, détection et production d'évènement.
@@ -176,6 +183,8 @@ Un évènement est une action ou un état sur une app ou son environnement (clic
 - Flexibilité : Les nouvelles fonctionnalités peuvent être intégrées comme nouveaux consommateurs d'événements sans modification du flux existant.
 
 ### Exemples d'implémentations
+- Est utile pour de la surveillance de ressources
+- 
 
 - Système d'interface graphique, les actions utilisateur déclenchent des évènements
 - Dispositif IoT
@@ -184,11 +193,15 @@ Un évènement est une action ou un état sur une app ou son environnement (clic
 ![event_driven.png](event_driven.png)
 
 ### Cas d'utilisations
+- Sotheby's a mis en place une architecture de type EDA pour son système de gestion des enchères
 
 - Netflix utilise l'EDA avec Apache Kafka 
 - Uber
 
 ### Sources
+- [aws](https://aws.amazon.com/fr/event-driven-architecture)
+- [wikipedia](https://fr.wikipedia.org/wiki/Architecture_orientée_événements)
+- [redhat](https://www.redhat.com/fr/topics/integration/what-is-event-driven-architecture)
 
 [Bob le développeur](https://www.bob-le-developpeur.com/notions/event-driven-architecture)
 [Microsoft](https://learn.microsoft.com/fr-fr/azure/architecture/guide/architecture-styles/event-driven)
@@ -196,6 +209,14 @@ Un évènement est une action ou un état sur une app ou son environnement (clic
 ## Hexa
 
 ### Caractéristiques
+- Coeur métier isolé : la logique métier (domain + use cases) ne dépend pas de la BDD, du framework web, ni de l’UI. 
+- Ports : ce sont des interfaces définies par le domaine pour interagir avec l’extérieur (ex. UserRepository, PaymentGateway, EmailSender). 
+- Adapters : ce sont des implémentations concrètes des ports (ex. SqlUserRepository, MongoUserRepository, controller REST, CLI, etc.). 
+- Symétrie entrée / sortie : UI, API, BDD, queue de messages, tests automatiques sont tous vus comme des “clients” branchés sur le même cœur via des ports. 
+- Faible couplage & forte testabilité : tu peux tester le cœur métier avec des doubles (mocks/fakes) sans démarrer BDD ni serveur HTTP. 
+- Échangeabilité des technos : tu peux remplacer une BDD, un système de paiement, une API externe en changeant seulement l’adapter. 
+- Compatible DDD / Clean Architecture : très utilisé avec Domain-Driven Design et apparenté aux autres archis “domain-centric” (Onion, Clean). 
+- Alternative aux couches classiques : ce n’est pas qu’un empilement UI → Service → Repository ; le cœur ne “voit” pas l’infrastructure. 
 
 3 couches :
 - Domaine : cette couche contient la logique métier centrale de l’application. Elle est indépendante des autres couches et encapsule toutes les règles et comportements spécifiques au domaine.
@@ -227,8 +248,18 @@ L'architecture hexagonale isole la couche métier du reste de la solution en le 
 ![alt text](image-2.png)
 
 ### Cas d'utilisations
-
+- MMA
 ### Sources
+https://alistair.cockburn.us/hexagonal-architecture
+https://en.wikipedia.org/wiki/Hexagonal_architecture_(software)
+https://blog.octo.com/architecture-hexagonale-trois-principes-et-un-exemple-dimplementation
+https://docs.aws.amazon.com/prescriptive-guidance/latest/cloud-design-patterns/hexagonal-architecture.html
+https://www.baeldung.com/hexagonal-architecture-ddd-spring
+https://www.arhohuttunen.com/hexagonal-architecture-spring-boot/
+https://scalastic.io/en/hexagonal-architecture/
+https://codesoapbox.dev/ports-adapters-aka-hexagonal-architecture-explained/
+https://miladezzat.medium.com/hexagonal-architecture-ports-and-adapters-pattern-5ad2421802ec
+https://github.com/alexander-schranz/hexagonal-architecture-study
 
 [Code Insider](https://www.youtube.com/watch?v=wKXUd_WbTTc)
 [Zenika TV](https://www.youtube.com/watch?v=MNXcuIGmYQw&t=30s)
