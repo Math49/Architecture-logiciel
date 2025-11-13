@@ -2,6 +2,11 @@
 
 - monolithique => 1 seul gros projet (MVC), micro-services => authentification (SSO), Event-Driven => Winform, Hexa => optimisation séparation des responsabilités, code métier, etc...
 
+## Définitions
+
+- rigidité => Capacité d'un système à s'adapter aux changement
+- scalabilité => Capacité d'une application grossir 
+- overengineering =>
 
 # TP 1 :
 
@@ -143,10 +148,10 @@ Un évènement est une action ou un état sur une app ou son environnement (clic
 
 **Avantage**
 
-- Découplage
-- Réactivité
-- Scalabilité
-- Flexibilité
+- Découplage : Les producteurs et consommateurs d'événements sont largement indépendants les uns des autres, ce qui facilite la maintenance et l'évolution du système.
+- Réactivité : Les systèmes basés sur des événements sont très réactifs et peuvent traiter les changements en temps réel.
+- Scalabilité : Il est plus facile de scaler un système EDA car on peut ajouter des consommateurs sans perturber les producteurs, et vice versa.
+- Flexibilité : Les nouvelles fonctionnalités peuvent être intégrées comme nouveaux consommateurs d'événements sans modification du flux existant.
 
 ### Exemples d'implémentations
 
@@ -170,10 +175,33 @@ Un évènement est une action ou un état sur une app ou son environnement (clic
 
 ### Caractéristiques
 
-### Définition
+3 couches :
+- Domaine : cette couche contient la logique métier centrale de l’application. Elle est indépendante des autres couches et encapsule toutes les règles et comportements spécifiques au domaine.
+- Application : la couche application orchestre les cas d’utilisation et les interactions entre le domaine et les autres composants. Elle ne contient aucune logique métier mais appelle les services du domaine.
+- Infrastructure : cette couche gère les détails techniques tels que la base de données, les API externes, les interfaces utilisateur, etc. Elle contient les implémentations concrètes nécessaires pour le fonctionnement de l’application
 
+L'infrastructure, c'est la couche qui contient tout ce qui est technique et spécifique aux dépendances
+
+Isoler la couche métiers des autres couches de l'application
+Les autres couches sont reliées au bloc métier via des ports et des adaptateurs pour discuter avec l'extérieur
+
+Adaptateurs d'entrée : Ils permettent d'ingérer des données d'autres services techniques, on spécifie nous-mêmes les règles
+donc c'est de l'inversion de dépendance, on peut ajouter des couches techniques sans toucher au métier,
+c'est la technique qui est formattée pour être adaptée à la couche métier,
+ainsi pas besoin de modifier la couche métier ainsi + de capacité d'adaptation
+
+Adaptateurs de sortie : Envoyer les données aux couches extérieures compréhensible pour les services externes
+
+Si on veut ajouter un nouveau service, il suffit d'ajouter un nouvel adaptateur
+
+Inversion de dépendance, c'est le serveur qui décide du protocol de communication, pas l'inverse
+
+### Définition
+![diagram_archi_hexagonal.png](diagram_archi_hexagonal.png)
 ### Exemples d'implémentations
 
 ### Cas d'utilisations
 
 ### Sources
+[Code Insider](https://www.youtube.com/watch?v=wKXUd_WbTTc)
+[Zenika TV](https://www.youtube.com/watch?v=MNXcuIGmYQw&t=30s)
